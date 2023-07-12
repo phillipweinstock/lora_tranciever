@@ -1,0 +1,3 @@
+%{
+  "exatomvm": {:git, "https://github.com/atomvm/ExAtomVM/", "c19a92aaadd660a757022fa457822e98d1f07b91", []},
+}

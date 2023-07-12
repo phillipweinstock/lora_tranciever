@@ -1,0 +1,8 @@
+You must run the following commands under the platformio enviroment
+esptool --chip esp32 --baud 115200 erase flash
+ ### THIS ERASES THE FLASH
+esptool --chip esp32 --baud 115200 --before default_reset --after hard_reset write_flash -u --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 atomvvm-esp32.bin
+esptool --chip esp32  --baud 115200 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 bootloader.bin 0x10000 atomvvm-esp32.bin 0x8000 partitions.bin
+### UPLOADS THE ATOMVM IMAGE
+esptool --chip esp32  --baud 115200 --before default_reset --after hard_reset write_flash -u --flash_mode dio --flash_freq 40m --flash_size detect 0x210000 lora_tranciever.avm
+### UPLOADS OUR CODE
