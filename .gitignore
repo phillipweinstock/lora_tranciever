@@ -1,5 +1,5 @@
 # The directory Mix will write compiled artifacts to.
-/_build/
+/_build/**
 
 # If you run "mix test --cover", coverage assets end up here.
 /cover/
@@ -24,3 +24,6 @@ lora_tranciever-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+#private Configuration
+/lib/config.ex
