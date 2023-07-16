@@ -2,31 +2,15 @@
 # From Erlang source: c:/Users/pip43/Documents/Projects/lora_tranciever/lib/wifi.erl
 # At: 2023-07-15 19:06:53
 
-defmodule :wifi do
-  def start() do
-    case(verify_platform(:atomvm.platform())) do
-      :ok ->
-        start_network()
-
-      error ->
-        error
-    end
-  end
-
-  defp start_network() do
+defmodule Wifi do
+  def start_network() do
     config = [
-      ap: [
-        {:ap_started, &ap_started/0},
-        {:sta_connected, &sta_connected/1},
-        {:sta_ip_assigned, &sta_ip_assigned/1},
-        {:sta_disconnected, &sta_disconnected/1} | :maps.get(:ap, :config.get())
-      ],
       sta: [
         {:connected, &connected/0},
         {:got_ip, &got_ip/1},
-        {:disconnected, &disconnected/0} | :maps.get(:sta, :config.get())
+        {:disconnected, &disconnected/0} | :maps.get(:sta, AppConfig.wifi())
       ],
-      sntp: [host: ~c"pool.ntp.org"]
+      sntp: [host: ~c"pool.ntp.org", synchronized: &date_info/0]
     ]
 
     case(:network.start(config)) do
@@ -38,44 +22,19 @@ defmodule :wifi do
     end
   end
 
-  defp ap_started() do
-    :io.format(~c"AP started.~n")
-  end
-
-  defp sta_connected(mac) do
-    :io.format(~c"STA connected with mac ~p~n", [mac])
-  end
-
-  defp sta_disconnected(mac) do
-    :io.format(~c"STA disconnected with mac ~p~n", [mac])
-  end
-
-  defp sta_ip_assigned(address) do
-    :io.format(~c"STA assigned address ~p~n", [address])
-  end
-
   defp connected() do
-    :io.format(~c"STA connected.~n")
+    :io.format(~c"Connected to wireless access point.~n")
   end
 
   defp got_ip(ipInfo) do
-    :io.format(~c"Got IP: ~p.~n", [ipInfo])
-    loop()
+    :io.format(~c"Assigned IP: ~p.~n", [ipInfo])
   end
 
   defp disconnected() do
-    :io.format(~c"STA disconnected.~n")
+    :io.format(~c"Disconnected from wireless access point.~n")
   end
 
-  defp verify_platform(:esp32) do
-    :ok
-  end
-
-  defp verify_platform(platform) do
-    {:error, {:unsupported_platform, platform}}
-  end
-
-  defp loop() do
+  defp date_info() do
     {{year, month, day}, {hour, minute, second}} = :erlang.universaltime()
 
     :io.format(~c"Date: ~p/~p/~p ~p:~p:~p (~pms)~n", [
@@ -87,8 +46,5 @@ defmodule :wifi do
       second,
       :erlang.system_time(:millisecond)
     ])
-
-    :timer.sleep(5000)
-    loop()
   end
 end

@@ -3,4 +3,5 @@
   "atomvm_mqtt_client": {:git, "https://github.com/atomvm/atomvm_mqtt_client.git", "d407fe1690a0797a7a8ad41f9405438ca64e5496", []},
   "erl2ex": {:git, "https://github.com/dazuma/erl2ex.git", "244c2d9ed5805ef4855a491d8616b8842fef7ca4", []},
   "exatomvm": {:git, "https://github.com/atomvm/ExAtomVM/", "e1ded3338acf7590e7829399ae3bdffda12ed7c9", []},
+  "mqtt_client": {:git, "https://github.com/atomvm/atomvm_mqtt_client.git", "d407fe1690a0797a7a8ad41f9405438ca64e5496", []},
 }
