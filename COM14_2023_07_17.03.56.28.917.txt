@@ -1,0 +1,1105 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6660
+load:0x40078000,len:14848
+ho 0 tail 12 room 4
+load:0x40080400,len:3792
+entry 0x40080694
+[0;32mI (29) boot: ESP-IDF v4.4.3 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time 09:29:16[0m
+[0;32mI (29) boot: chip revision: 3[0m
+[0;32mI (32) boot_comm: chip revision: 3, min. bootloader chip revision: 0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 001c0000[0m
+[0;32mI (91) boot:  3 lib.avm          RF data          01 01 001d0000 00040000[0m
+[0;32mI (99) boot:  4 main.avm         RF data          01 01 00210000 00100000[0m
+[0;32mI (106) boot: End of partition table[0m
+[0;32mI (111) boot_comm: chip revision: 3, min. application chip revision: 0[0m
+[0;32mI (118) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=27100h (160000) map[0m
+[0;32mI (184) esp_image: segment 1: paddr=00037128 vaddr=3ff80063 size=00008h (     8) load[0m
+[0;32mI (185) esp_image: segment 2: paddr=00037138 vaddr=3ffb0000 size=03b0ch ( 15116) load[0m
+[0;32mI (196) esp_image: segment 3: paddr=0003ac4c vaddr=40080000 size=053cch ( 21452) load[0m
+[0;32mI (207) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=114754h (1132372) map[0m
+[0;32mI (617) esp_image: segment 5: paddr=0015477c vaddr=400853cc size=138f4h ( 80116) load[0m
+[0;32mI (651) esp_image: segment 6: paddr=00168078 vaddr=400c0000 size=00064h (   100) load[0m
+[0;32mI (651) esp_image: segment 7: paddr=001680e4 vaddr=50000000 size=00010h (    16) load[0m
+[0;32mI (668) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (669) boot: Disabling RNG early entropy source...[0m
+[0;32mI (681) cpu_start: Pro cpu up.[0m
+[0;32mI (682) cpu_start: Starting app cpu, entry point is 0x40081620[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (698) cpu_start: Pro cpu start user code[0m
+[0;32mI (698) cpu_start: cpu freq: 160000000[0m
+[0;32mI (698) cpu_start: Application information:[0m
+[0;32mI (703) cpu_start: Project name:     atomvm-esp32[0m
+[0;32mI (708) cpu_start: App version:      v0.5.0-785-gd9883129[0m
+[0;32mI (714) cpu_start: Compile time:     Jul 13 2023 09:29:10[0m
+[0;32mI (720) cpu_start: ELF file SHA256:  5db47960c83c9662...[0m
+[0;32mI (726) cpu_start: ESP-IDF:          v4.4.3[0m
+[0;32mI (731) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (738) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (744) heap_init: At 3FFB7A10 len 000285F0 (161 KiB): DRAM[0m
+[0;32mI (750) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (757) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (763) heap_init: At 40098CC0 len 00007340 (28 KiB): IRAM[0m
+[0;32mI (771) spi_flash: detected chip: generic[0m
+[0;32mI (774) spi_flash: flash io: dio[0m
+[0;33mW (778) spi_flash: Detected size(16384k) larger than the size in the binary image header(4096k). Using the size in the binary image header.[0m
+[0;32mI (793) cpu_start: Starting scheduler on PRO CPU.[0m
+[0;32mI (0) cpu_start: Starting scheduler on APP CPU.[0m
+
+    ###########################################################
+
+       ###    ########  #######  ##     ## ##     ## ##     ## 
+      ## ##      ##    ##     ## ###   ### ##     ## ###   ### 
+     ##   ##     ##    ##     ## #### #### ##     ## #### #### 
+    ##     ##    ##    ##     ## ## ### ## ##     ## ## ### ## 
+    #########    ##    ##     ## ##     ##  ##   ##  ##     ## 
+    ##     ##    ##    ##     ## ##     ##   ## ##   ##     ## 
+    ##     ##    ##     #######  ##     ##    ###    ##     ## 
+
+    ###########################################################
+
+[0;32mI (903) AtomVM: Starting AtomVM revision 0.6.0-dev+git.d9883129[0m
+[0;32mI (913) sys: Loaded BEAM partition main.avm at address 0x210000 (size=1048576 bytes)[0m
+[0;32mI (933) network_driver: Initialized network interface[0m
+[0;32mI (933) network_driver: Created default event loop[0m
+[0;32mI (953) AtomVM: Found startup beam Elixir.LoraTranciever.beam[0m
+[0;32mI (953) sys: Loaded BEAM partition lib.avm at address 0x1d0000 (size=262144 bytes)[0m
+[0;32mI (953) AtomVM: Starting Elixir.LoraTranciever.beam...[0m
+---
+[0;32mI (1013) network_driver: STA ssid: Silence of the LAN_2G[0m
+I (1033) wifi:wifi driver task: 3ffc6af4, prio:23, stack:6656, core=0
+[0;32mI (1033) system_api: Base MAC address is not set[0m
+[0;32mI (1033) system_api: read default base MAC address from EFUSE[0m
+I (1043) wifi:wifi firmware version: 8cb87ff
+I (1043) wifi:wifi certification version: v7.0
+I (1043) wifi:config NVS flash: enabled
+I (1043) wifi:config nano formating: disabled
+I (1053) wifi:Init data frame dynamic rx buffer num: 32
+I (1053) wifi:Init management frame dynamic rx buffer num: 32
+I (1063) wifi:Init management short buffer num: 32
+I (1063) wifi:Init dynamic tx buffer num: 32
+I (1073) wifi:Init static rx buffer size: 1600
+I (1073) wifi:Init static rx buffer num: 10
+I (1083) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1083) wifi_init: rx ba win: 6[0m
+[0;32mI (1083) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1093) wifi_init: udp mbox: 6[0m
+[0;32mI (1093) wifi_init: tcp mbox: 6[0m
+[0;32mI (1093) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1103) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1103) wifi_init: tcp mss: 1440[0m
+[0;32mI (1113) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1113) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1123) network_driver: WIFI mode set to 1[0m
+[0;32mI (1123) network_driver: STA mode configured[0m
+[0;32mI (1133) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07[0m
+I (1243) wifi:mode : sta (b4:8a:0a:9b:fd:c4)
+I (1243) wifi:enable tsf
+[0;32mI (1243) network_driver: WIFI started[0m
+[0;32mI (1243) network_driver: WIFI_EVENT_STA_START received.[0m
+[0;32mI (1243) network_driver: SNTP initialized with host set to pool.ntp.org[0m
+[0;32mI (1253) network_driver: DHCP hostname set to Lora_gateway[0m
+[0;32mI (1293) atomvm_mqtt: MQTT_EVENT_BEFORE_CONNECT event_id: 7[0m
+[0;31mE (1293) esp-tls: couldn't get hostname for :test.mosquitto.org: getaddrinfo() returns 202, addrinfo=0x0[0m
+[0;31mE (1303) TRANSPORT_BASE: Failed to open a new connection: 32769[0m
+[0;31mE (1303) MQTT_CLIENT: Error transport connect[0m
+[0;31mE (1313) atomvm_mqtt: MQTT_EVENT_ERROR[0m
+MQTT started.
+I (2463) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (3213) wifi:state: init -> auth (b0)
+I (3323) wifi:state: auth -> assoc (0)
+I (3343) wifi:state: assoc -> run (10)
+I (3383) wifi:connected with Silence of the LAN_2G, aid = 6, channel 11, BW20, bssid = 18:31:bf:58:0c:50
+I (3383) wifi:security: WPA2-PSK, phy: bgn, rssi: -60
+I (3383) wifi:pm start, type: 1
+
+[0;32mI (3393) network_driver: WIFI_EVENT_STA_CONNECTED received.[0m
+Connected to wireless access point.
+I (3463) wifi:AP's beacon interval = 102400 us, DTIM period = 2
+W (4443) wifi:<ba-add>idx:0 (ifx:0, 18:31:bf:58:0c:50), tid:7, ssn:0, winSize:64
+W (4503) wifi:<ba-add>idx:1 (ifx:0, 18:31:bf:58:0c:50), tid:0, ssn:0, winSize:64
+[0;32mI (5433) esp_netif_handlers: sta ip: 192.168.1.186, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (5433) network_driver: IP_EVENT_STA_GOT_IP: 192.168.1.186[0m
+Assigned IP: {{192,168,1,186},{255,255,255,0},{192,168,1,1}}.
+[0;32mI (11323) atomvm_mqtt: MQTT_EVENT_BEFORE_CONNECT event_id: 7[0m
+Connected to "mqtt://test.mosquitto.org"
+Subscribing to <<"atomvm/qos0">>...
+Subscribed to <<"atomvm/qos0">>.
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=37633
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=12568
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=12051
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=10187
+[0;32mI (34803) network_driver: Posting SNTP synchronization event[0m
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=26573
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=38415
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=38966
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=20670
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=17172
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=45936
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=56980
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=29834
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=34492
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=35784
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=57596
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=15520
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=13757
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=59238
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=37773
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=63517
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=36794
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=60983
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=11741
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=34206
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=7450
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=20370
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=61651
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=26771
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=25584
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=18825
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=54518
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=63463
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=28480
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=28770
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=9333
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=57635
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=64888
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=39495
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=33473
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=11949
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=37704
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=42183
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=61382
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=56324
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=33820
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=42518
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=36828
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=65514
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=57361
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=42052
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=25114
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=30513
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=63744
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=44515
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=46998
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=50583
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=6626
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=65511
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=41209
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=65526
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=61819
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=29480
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=46978
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=58278
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=17608
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=30436
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=41866
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=49140
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=64006
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=12080
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=17485
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=6334
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=29586
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=58453
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=59507
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=1698
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=30998
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=21620
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=26185
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=20540
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=15970
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=15423
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=63595
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=10560
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=21163
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=2080
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=61077
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=16188
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=11769
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=42194
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=36956
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=46232
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=2966
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=40997
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=34408
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=27168
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=21733
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=17795
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=37681
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=64855
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=29960
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=62217
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=32172
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=48487
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=54408
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=18048
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=33941
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=41754
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=8911
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=24659
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=45296
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=45352
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=30605
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=53871
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=48133
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=57857
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=32904
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=30197
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=12137
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=25273
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=59452
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=10571
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=30990
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=15086
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=22849
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=31973
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=54330
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=2382
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=38301
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=29506
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=37470
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=27612
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=1925
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=43229
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=8277
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=7701
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=41322
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=1672
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=26654
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=46961
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=39146
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=50364
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=25426
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=45211
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=8468
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=32294
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=39671
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=22761
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=51357
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=16652
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=62504
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=756
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=14788
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=28396
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=10347
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=11505
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=23214
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=18604
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=34890
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=26243
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=16242
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=13180
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=46154
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=62998
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=29108
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=46573
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=45704
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=54838
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=37111
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=27829
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=28125
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=14592
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=3063
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=20225
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=35279
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=31778
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=56037
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=49036
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=6724
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=60736
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=49006
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=34649
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=46653
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=27460
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=36996
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=41896
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=23205
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=25296
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=14784
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=3395
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=38256
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=31124
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=36512
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=23211
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=19388
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=22076
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=45099
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=46485
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=50589
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=29183
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=16926
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=53549
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=37336
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=36883
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=52266
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=43449
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=2182
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=17996
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=13885
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=58200
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=64673
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=26202
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=31366
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=63884
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=44584
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=43361
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=26650
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=22707
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=23179
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=29716
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=12014
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=50449
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=43213
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=36724
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=39737
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=38920
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=50533
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=64321
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=20251
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=58581
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=8875
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=54385
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=10339
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=19099
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=17668
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=30066
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=43080
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=21984
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=6061
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=17987
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=60289
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=11646
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=25498
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=31300
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=25490
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=2330
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=58954
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=46560
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=54077
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=35453
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=47350
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=187
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=62877
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=6133
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=15694
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=11443
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=59163
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=6220
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=26562
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=34330
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=26467
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=36757
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=3671
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=60088
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=33883
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=38849
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=5536
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=61860
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=16217
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=60516
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=21411
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=60228
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=60397
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=22437
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=37639
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=10729
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=57945
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=26059
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=38573
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=17706
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=27366
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=64009
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=52025
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=23133
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=29350
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=20488
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=44900
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=56012
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=16612
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=24384
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=2900
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=44155
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=59283
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=28175
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=25927
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=57309
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=5105
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=1175
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=30348
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=32184
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=19650
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=60396
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=7430
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=45814
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=45834
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=47803
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=48769
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=15571
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=16619
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=25099
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=10738
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=32823
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=47211
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=64633
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=11373
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=46646
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=45990
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=49216
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=55543
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=55051
+Publishing data on topic <<"atomvm/qos0">>
+Received data on topic <<"atomvm/qos0">>: <<"echo">> 
+MQTT <0.4.0> published to topic <<"atomvm/qos0">> msg_id=47117
+Publishing data on topic <<"atomvm/qos0">>

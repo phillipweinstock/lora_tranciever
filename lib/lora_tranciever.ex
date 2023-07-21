@@ -4,17 +4,16 @@ defmodule LoraTranciever do
   @compile {:no_warn_undefined, [GPIO, NETWORK, EXAVMLIB, ATOMVM]}
 
   def start() do
-    Wifi.start_network()
-    Mqtt.start_mqtt()
-    lora_start(AppConfig.lora_mode())
-
+   # Wifi.start_network()
+    #Mqtt.start_mqtt()
+    #:timer.sleep(10000)
+    lora_start()
   end
 
-  defp lora_start(:gateway) do
-    Lora.start_gateway()
-  end
-
-  defp lora_start(:client) do
-    Lora.start_client()
+  defp lora_start() do
+    #  Lora.start_gateway()
+    Lora_Device = Lora.start_client()
+    payload = "123"
+    Lora.send_lora(Lora_Device, payload)
   end
 end
