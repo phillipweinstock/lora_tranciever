@@ -9,10 +9,10 @@ defmodule Lora do
 
 
   def start_client() do
-    LoraConfig = AppConfig.lora_config(:sx127x)
-    {:ok, Lora} = :lora.start(LoraConfig)
+    loraConfig = AppConfig.lora_config(:sx127x)
+    {:ok, lora} = :lora.start(loraConfig)
     :io.format("Lora Client started")
-    Lora
+    lora
   end
 
 

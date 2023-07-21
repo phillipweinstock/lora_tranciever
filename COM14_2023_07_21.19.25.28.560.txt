@@ -66,13 +66,13 @@ entry 0x40080694
      ##   ##     ##    ##     ## #### #### ##     ## #### #### 
     ##     ##    ##    ##     ## ## ### ## ##     ## ## ### ## 
     #########    ##    ##     ## ##     ##  ##   ##  ##     ## 
-    ##     ##    ##    ##     ## ##     ##   ## ##   ##     ## 
-    ##     ##    ##     #######  ##     ##    ###    ##     ## 
-
-    ###########################################################
+    ##     ##    ##    ##     ## ##     ##   ## ##   ##     ####  ##     ##    ###    ##     ######################################
 
 [0;32mI (903) AtomVM: Starting AtomVM revision 0.6.0-dev+git.d9883129[0m
-[0;32mI (913) sys: Loaded BEAM partition main.avm at address 0x210000 (size=1048576 bytes)[0m
+[0;32mI (913) sys: Loaded BEAM partition main.avm at address 0x210000 (si## 
+
+    ###################### 
+    ##     ##    ##     ####ze=1048576 bytes)[0m
 [0;32mI (933) network_driver: Initialized network interface[0m
 [0;32mI (933) network_driver: Created default event loop[0m
 [0;32mI (953) AtomVM: Found startup beam Elixir.LoraTranciever.beam[0m
