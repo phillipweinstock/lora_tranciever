@@ -1,0 +1,270 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6660
+load:0x40078000,len:14848
+ho 0 tail 12 room 4
+load:0x40080400,len:3792
+entry 0x40080694
+[0;32mI (29) boot: ESP-IDF v4.4.3 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time 09:29:16[0m
+[0;32mI (29) boot: chip revision: 3[0m
+[0;32mI (32) boot_comm: chip revision: 3, min. bootloader chip revision: 0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 001c0000[0m
+[0;32mI (91) boot:  3 lib.avm          RF data          01 01 001d0000 00040000[0m
+[0;32mI (99) boot:  4 main.avm         RF data          01 01 00210000 00100000[0m
+[0;32mI (106) boot: End of partition table[0m
+[0;32mI (111) boot_comm: chip revision: 3, min. application chip revision: 0[0m
+[0;32mI (118) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=27100h (160000) map[0m
+[0;32mI (184) esp_image: segment 1: paddr=00037128 vaddr=3ff80063 size=00008h (     8) load[0m
+[0;32mI (185) esp_image: segment 2: paddr=00037138 vaddr=3ffb0000 size=03b0ch ( 15116) load[0m
+[0;32mI (196) esp_image: segment 3: paddr=0003ac4c vaddr=40080000 size=053cch ( 21452) load[0m
+[0;32mI (207) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=114754h (1132372) map[0m
+[0;32mI (617) esp_image: segment 5: paddr=0015477c vaddr=400853cc size=138f4h ( 80116) load[0m
+[0;32mI (651) esp_image: segment 6: paddr=00168078 vaddr=400c0000 size=00064h (   100) load[0m
+[0;32mI (651) esp_image: segment 7: paddr=001680e4 vaddr=50000000 size=00010h (    16) load[0m
+[0;32mI (668) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (669) boot: Disabling RNG early entropy source...[0m
+[0;32mI (681) cpu_start: Pro cpu up.[0m
+[0;32mI (682) cpu_start: Starting app cpu, entry point is 0x40081620[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (698) cpu_start: Pro cpu start user code[0m
+[0;32mI (698) cpu_start: cpu freq: 160000000[0m
+[0;32mI (698) cpu_start: Application information:[0m
+[0;32mI (703) cpu_start: Project name:     atomvm-esp32[0m
+[0;32mI (708) cpu_start: App version:      v0.5.0-785-gd9883129[0m
+[0;32mI (714) cpu_start: Compile time:     Jul 13 2023 09:29:10[0m
+[0;32mI (720) cpu_start: ELF file SHA256:  5db47960c83c9662...[0m
+[0;32mI (726) cpu_start: ESP-IDF:          v4.4.3[0m
+[0;32mI (731) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (738) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (744) heap_init: At 3FFB7A10 len 000285F0 (161 KiB): DRAM[0m
+[0;32mI (750) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (757) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (763) heap_init: At 40098CC0 len 00007340 (28 KiB): IRAM[0m
+[0;32mI (771) spi_flash: detected chip: generic[0m
+[0;32mI (774) spi_flash: flash io: dio[0m
+[0;33mW (778) spi_flash: Detected size(16384k) larger than the size in the binary image header(4096k). Using the size in the binary image header.[0m
+[0;32mI (793) cpu_start: Starting scheduler on PRO CPU.[0m
+[0;32mI (0) cpu_start: Starting scheduler on APP CPU.[0m
+
+    ###########################################################
+
+       ###    ########  #######  ##     ## ##     ## ##     ## 
+      ## ##      ##    ##     ## ###   ### ##     ## ###   ### 
+     ##   ##     ##    ##     ## #### #### ##     ## #### #### 
+    ##     ##    ##    ##     ## ## ### ## ##     ## ## ### ## 
+    #########    ##    ##     ## ##     ##  ##   ##  ##     ## 
+    ##     ##    ##    ##     ## ##     ##   ## ##   ##     ## 
+    ##     ##    ##     #######  ##     ##    ###    ##     ## 
+
+    ###########################################################
+
+[0;32mI (903) AtomVM: Starting AtomVM revision 0.6.0-dev+git.d9883129[0m
+[0;32mI (913) sys: Loaded BEAM partition main.avm at address 0x210000 (size=1048576 bytes)[0m
+[0;32mI (933) network_driver: Initialized network interface[0m
+[0;32mI (933) network_driver: Created default event loop[0m
+[0;32mI (953) AtomVM: Found startup beam Elixir.LoraTranciever.beam[0m
+[0;32mI (953) sys: Loaded BEAM partition lib.avm at address 0x1d0000 (size=262144 bytes)[0m
+[0;32mI (953) AtomVM: Starting Elixir.LoraTranciever.beam...[0m
+---
+[0;32mI (973) spi_driver: SPI Bus initialized.[0m
+[0;32mI (973) spi_driver: SPI device Gateway added.[0m
+CRASH 
+======
+pid: <0.1.0>
+
+Stacktrace:
+Unable to allocate space for module paths.  Returning raw stacktrace.
+{2,0,0,0,[{0,95},{1,262}]}
+
+cp: #CP<module: 1, label: 16, offset: 15>
+
+x[0]: error
+x[1]: {badmatch,#{busy=>22,device=>sx127x,device_name=>Gateway,irq=>26,reset=>21,spi=><0.2.0>}}
+x[2]: {2,0,0,0,[{0,95},{1,262}]}
+
+Stack 
+------
+
+#CP<module: 0, label: 10, offset: 10>
+#CP<module: 0, label: 18, offset: 0>
+
+
+Registers
+----------
+x[0]: error
+x[1]: {badmatch,#{busy=>22,device=>sx127x,device_name=>Gateway,irq=>26,reset=>21,spi=><0.2.0>}}
+x[2]: {2,0,0,0,[{0,95},{1,262}]}
+x[3]: []
+x[4]: []
+x[5]: []
+x[6]: []
+x[7]: []
+x[8]: []
+x[9]: []
+x[10]: []
+x[11]: []
+x[12]: []
+x[13]: []
+x[14]: []
+x[15]: []
+
+
+Mailbox
+--------
+
+
+Monitors
+--------
+
+
+**End Of Crash Report**
+AtomVM finished with return value: error
+[0;32mI (1043) AtomVM: AtomVM application terminated.  Going to sleep forever ...[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6660
+load:0x40078000,len:14848
+ho 0 tail 12 room 4
+load:0x40080400,len:3792
+entry 0x40080694
+[0;32mI (29) boot: ESP-IDF v4.4.3 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time 09:29:16[0m
+[0;32mI (29) boot: chip revision: 3[0m
+[0;32mI (32) boot_comm: chip revision: 3, min. bootloader chip revision: 0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 001c0000[0m
+[0;32mI (91) boot:  3 lib.avm          RF data          01 01 001d0000 00040000[0m
+[0;32mI (99) boot:  4 main.avm         RF data          01 01 00210000 00100000[0m
+[0;32mI (106) boot: End of partition table[0m
+[0;32mI (111) boot_comm: chip revision: 3, min. application chip revision: 0[0m
+[0;32mI (118) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=27100h (160000) map[0m
+[0;32mI (184) esp_image: segment 1: paddr=00037128 vaddr=3ff80063 size=00008h (     8) load[0m
+[0;32mI (185) esp_image: segment 2: paddr=00037138 vaddr=3ffb0000 size=03b0ch ( 15116) load[0m
+[0;32mI (196) esp_image: segment 3: paddr=0003ac4c vaddr=40080000 size=053cch ( 21452) load[0m
+[0;32mI (207) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=114754h (1132372) map[0m
+[0;32mI (617) esp_image: segment 5: paddr=0015477c vaddr=400853cc size=138f4h ( 80116) load[0m
+[0;32mI (651) esp_image: segment 6: paddr=00168078 vaddr=400c0000 size=00064h (   100) load[0m
+[0;32mI (651) esp_image: segment 7: paddr=001680e4 vaddr=50000000 size=00010h (    16) load[0m
+[0;32mI (668) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (669) boot: Disabling RNG early entropy source...[0m
+[0;32mI (681) cpu_start: Pro cpu up.[0m
+[0;32mI (682) cpu_start: Starting app cpu, entry point is 0x40081620[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (698) cpu_start: Pro cpu start user code[0m
+[0;32mI (698) cpu_start: cpu freq: 160000000[0m
+[0;32mI (698) cpu_start: Application information:[0m
+[0;32mI (703) cpu_start: Project name:     atomvm-esp32[0m
+[0;32mI (708) cpu_start: App version:      v0.5.0-785-gd9883129[0m
+[0;32mI (714) cpu_start: Compile time:     Jul 13 2023 09:29:10[0m
+[0;32mI (720) cpu_start: ELF file SHA256:  5db47960c83c9662...[0m
+[0;32mI (726) cpu_start: ESP-IDF:          v4.4.3[0m
+[0;32mI (731) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (738) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (744) heap_init: At 3FFB7A10 len 000285F0 (161 KiB): DRAM[0m
+[0;32mI (750) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (757) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (763) heap_init: At 40098CC0 len 00007340 (28 KiB): IRAM[0m
+[0;32mI (771) spi_flash: detected chip: generic[0m
+[0;32mI (774) spi_flash: flash io: dio[0m
+[0;33mW (778) spi_flash: Detected size(16384k) larger than the size in the binary image header(4096k). Using the size in the binary image header.[0m
+[0;32mI (793) cpu_start: Starting scheduler on PRO CPU.[0m
+[0;32mI (0) cpu_start: Starting scheduler on APP CPU.[0m
+
+    ###########################################################
+
+       ###    ########  #######  ##     ## ##     ## ##     ## 
+      ## ##      ##    ##     ## ###   ### ##     ## ###   ### 
+     ##   ##     ##    ##     ## #### #### ##     ## #### #### 
+    ##     ##    ##    ##     ## ## ### ## ##     ## ## ### ## 
+    #########    ##    ##     ## ##     ##  ##   ##  ##     ## 
+    ##     ##    ##    ##     ## ##     ##   ## ##   ##     ## 
+    ##     ##    ##     #######  ##     ##    ###    ##     ## 
+
+    ###########################################################
+
+[0;32mI (903) AtomVM: Starting AtomVM revision 0.6.0-dev+git.d9883129[0m
+[0;32mI (913) sys: Loaded BEAM partition main.avm at address 0x210000 (size=1048576 bytes)[0m
+[0;32mI (933) network_driver: Initialized network interface[0m
+[0;32mI (933) network_driver: Created default event loop[0m
+[0;32mI (953) AtomVM: Found startup beam Elixir.LoraTranciever.beam[0m
+[0;32mI (953) sys: Loaded BEAM partition lib.avm at address 0x1d0000 (size=262144 bytes)[0m
+[0;32mI (953) AtomVM: Starting Elixir.LoraTranciever.beam...[0m
+---
+[0;32mI (973) spi_driver: SPI Bus initialized.[0m
+[0;32mI (973) spi_driver: SPI device Gateway added.[0m
+CRASH 
+======
+pid: <0.1.0>
+
+Stacktrace:
+Unable to allocate space for module paths.  Returning raw stacktrace.
+{2,0,0,0,[{0,95},{1,262}]}
+
+cp: #CP<module: 1, label: 16, offset: 15>
+
+x[0]: error
+x[1]: {badmatch,#{busy=>22,device=>sx127x,device_name=>Gateway,irq=>26,reset=>21,spi=><0.2.0>}}
+x[2]: {2,0,0,0,[{0,95},{1,262}]}
+
+Stack 
+------
+
+#CP<module: 0, label: 10, offset: 10>
+#CP<module: 0, label: 18, offset: 0>
+
+
+Registers
+----------
+x[0]: error
+x[1]: {badmatch,#{busy=>22,device=>sx127x,device_name=>Gateway,irq=>26,reset=>21,spi=><0.2.0>}}
+x[2]: {2,0,0,0,[{0,95},{1,262}]}
+x[3]: []
+x[4]: []
+x[5]: []
+x[6]: []
+x[7]: []
+x[8]: []
+x[9]: []
+x[10]: []
+x[11]: []
+x[12]: []
+x[13]: []
+x[14]: []
+x[15]: []
+
+
+Mailbox
+--------
+
+
+Monitors
+--------
+
+
+**End Of Crash Report**
+AtomVM finished with return value: error
+[0;32mI (1043) AtomVM: AtomVM application terminated.  Going to sleep forever ...[0m

@@ -37,14 +37,14 @@ defmodule AppConfig do
       device_name: erlconst_DEVICE_NAME(),
       device: device,
       irq: 26,
-      busy: 22,
-      reset: 21
+      #busy: 22,
+      reset: 14
     }
   end
 
   def spi_config(device) do
     %{
-      bus_config: %{miso_io_num: 15, mosi_io_num: 13, sclk_io_num: 14},
+      bus_config: %{miso_io_num: 19, mosi_io_num: 27, sclk_io_num: 18},
       device_config: %{
         erlconst_DEVICE_NAME() => %{
           address_len_bits:
@@ -57,7 +57,7 @@ defmodule AppConfig do
             end,
           spi_clock_hz: 1_000_000,
           mode: 0,
-          spi_cs_io_num: 18
+          spi_cs_io_num: 33
         }
       }
     }
