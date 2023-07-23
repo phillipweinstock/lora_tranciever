@@ -11,9 +11,10 @@ defmodule LoraTranciever do
   end
 
   defp lora_start() do
+    :lora_sender.start()
     #  Lora.start_gateway()
-    lora_Device = Lora.start_client()
-    payload = "123"
-    Lora.send_lora(lora_Device, payload)
+    # lora_Device = Lora.start_client()
+    # payload = "123"
+    # Lora.send_lora(lora_Device, payload)
   end
 end
