@@ -25,7 +25,7 @@ defmodule Mqtt do
   defp handle_subscribed(mQTT, topic) do
     :io.format(~c"Subscribed to ~p.~n", [topic])
     #:io.format(~c"Spawning publish loop on topic ~p~n", [topic])
-    :erlang.spawn(fn -> publish(mQTT, topic) end) #this will start a publishing loop, we do
+    :erlang.spawn(fn -> :lora_receiver.start() end) #this will start a publishing loop, we do
   end
 
 
@@ -35,7 +35,7 @@ defmodule Mqtt do
   end
 
 
-  defp publish(mQTT, topic) do
+  defp publish(mQTT, topic,msg) do
     :io.format(~c"Publishing data on topic ~p~n", [topic])
     try do
       var_self = self()
@@ -44,7 +44,7 @@ defmodule Mqtt do
         handle_published(mQTT2, topic2, msgId)
       end
       publishOptions = %{qos: :exactly_once, published_handler: handlePublished}
-      msg = :erlang.list_to_binary(~c"echo" )
+      #msg = :erlang.list_to_binary(~c"echo" )
       _ = :mqtt_client.publish(mQTT, topic, msg, publishOptions)
       receive do
         :published ->
@@ -57,8 +57,8 @@ defmodule Mqtt do
       :c, :e ->
         :io.format(~c"Error in publish: ~p:~p~n", [:c, :e])
     end
-    :timer.sleep(5000)
-    publish(mQTT, topic)
+    #:timer.sleep(5000)
+    #publish(mQTT, topic)
   end
 
 
