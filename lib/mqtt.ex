@@ -5,10 +5,12 @@
 
 defmodule Mqtt do
 
+  @name :mqtt_client
   def start_mqtt() do
     config = %{url: AppConfig.mqtt_endpoint, connected_handler: &handle_connected/1}
-    {:ok, _mQTT} = :mqtt_client.start(config)
+    {:ok, mQTT} = :mqtt_client.start(config)
     :io.format(~c"MQTT started.~n")
+    :erlang.register(:mqtt_instance,mQTT)
     :timer.sleep(:infinity)
   end
 
@@ -25,7 +27,7 @@ defmodule Mqtt do
   defp handle_subscribed(mQTT, topic) do
     :io.format(~c"Subscribed to ~p.~n", [topic])
     #:io.format(~c"Spawning publish loop on topic ~p~n", [topic])
-    :erlang.spawn(fn -> :lora_receiver.start() end) #this will start a publishing loop, we do
+    :erlang.spawn(fn -> Lora.start_reciever() end) #this will start a publishing loop, we do
   end
 
 
@@ -35,7 +37,7 @@ defmodule Mqtt do
   end
 
 
-  defp publish(mQTT, topic,msg) do
+  def publish(mQTT, topic,msg) do
     :io.format(~c"Publishing data on topic ~p~n", [topic])
     try do
       var_self = self()

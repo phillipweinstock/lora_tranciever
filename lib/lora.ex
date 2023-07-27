@@ -1,21 +1,28 @@
 defmodule Lora do
-  def start_gateway() do
-    # loraNodeConfig = %{lora: AppConfig.lora_config(:sx127x), call_handler: &handle_call/2}
-    # {:ok, _loraNode} =
-    # :lora_node.start(:robert, loraNodeConfig)
 
-    # :io.format(~c"Lora server started.  Waiting to receive requests...~n")
+
+  def start_transmitter() do
+    #:io.format("Attempting to start client/sender")
+    loraConfig = :config.lora_config(:sx127x)
+    #:io.format("Configuration successfully retrived")
+    {:ok, lora} = :lora.start(loraConfig)
+    #:io.format(~c"Lora started.  Sending messages...~n")
+    loop(lora, 0)
+  end
+  def start_reciever() do
+    #:io.format("Attempting to start reciever")
+    loraConfig = :config.lora_config(:sx127x)
+    #:io.format("Configuration successfully retrived")
+    {:ok, lora} = :lora.start(Map.merge(loraConfig, %{receive_handler: &handle_receive/3}))
+    :io.format(~c"Lora reciever started.  Waiting to receive messages...~n")
+    :timer.sleep(:infinity)
   end
 
 
-  def start_client() do
-    :io.format("Attempting to start Lora Client")
-    loraConfig = AppConfig.lora_config(:sx127x)
-    {:ok,lora} = :lora.start(loraConfig)
-    :io.format("Lora Client started")
-    lora
+  defp handle_receive(lora, packet, qoS) do
+    :io.format(~c"Received Packet: ~p; QoS: ~p~n", [packet, qoS])
+    Mqtt.publish(Process.whereis(:mqtt_instance),"lora_transciever/test",packet)
   end
-
 
   def send_lora(Device, Payload) do
     #payload = ["AtomVM ", :erlang.integer_to_list(i)]
@@ -30,5 +37,21 @@ defmodule Lora do
       :exit, :timeout ->
         :io.format(~c"Timed out broadcasting ~p~n", [Payload])
     end
+  end
+  defp loop(lora, i) do
+    payload = ["AtomVM ", :erlang.integer_to_list(i)]
+    try do
+      case(:lora.broadcast(lora, payload)) do
+        :ok ->
+          :io.format(~c"Sent ~p~n", [payload])
+        error ->
+          :io.format(~c"Error sending: ~p~n", [error])
+      end
+    catch
+      :exit, :timeout ->
+        :io.format(~c"Timed out broadcasting ~p~n", [payload])
+    end
+    :timer.sleep(1000)
+    loop(lora, i + 1)
   end
 end
