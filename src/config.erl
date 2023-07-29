@@ -21,30 +21,36 @@
 -define(DEVICE_NAME, lora_tranciever).
 
 -spec lora_config(Device :: sx127x | sx126x) -> map().
-lora_config(Device) -> #{
-    spi => spi:open(spi_config(Device)),
-    device_name => ?DEVICE_NAME,
-    device => Device,
-    irq => 26,
-    busy => 0,
-    reset => 14,
-    frequency => freq_433mhz,
-    tx_power => 17
-}.
+lora_config(Device) ->
+    #{
+        spi => spi:open(spi_config(Device)),
+        device_name => ?DEVICE_NAME,
+        device => Device,
+        irq => 26,
+        busy => 0,
+        reset => 14,
+        frequency => freq_433mhz,
+        tx_power => 17
+    }.
 
 %% @private
-spi_config(Device) -> #{
-    bus_config => #{
-        miso_io_num => 19,
-        mosi_io_num => 23,
-        sclk_io_num => 18
-    },
-    device_config => #{
-        ?DEVICE_NAME => #{
-            address_len_bits => case Device of sx127x -> 8; _ -> 0 end,
-            spi_clock_hz => 1000000,
-            mode => 0,
-            spi_cs_io_num => 33
+spi_config(Device) ->
+    #{
+        bus_config => #{
+            miso_io_num => 19,
+            mosi_io_num => 23,
+            sclk_io_num => 18
+        },
+        device_config => #{
+            ?DEVICE_NAME => #{
+                address_len_bits =>
+                    case Device of
+                        sx127x -> 8;
+                        _ -> 0
+                    end,
+                spi_clock_hz => 1000000,
+                mode => 0,
+                spi_cs_io_num => 33
+            }
         }
-    }
-}.
+    }.

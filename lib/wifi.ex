@@ -1,4 +1,3 @@
-
 defmodule Wifi do
   def start_network() do
     config = [
@@ -7,12 +6,12 @@ defmodule Wifi do
         {:got_ip, &got_ip/1},
         {:disconnected, &disconnected/0} | :maps.get(:sta, AppConfig.wifi())
       ]
-      #,sntp: [host: ~c"pool.ntp.org"]#, synchronized: &date_info/1
+      # ,sntp: [host: ~c"pool.ntp.org"]#, synchronized: &date_info/1
     ]
 
     case(:network.start(config)) do
       {:ok, _pid} ->
-        #:timer.sleep(:infinity)
+        # :timer.sleep(:infinity)
         :ok
 
       error ->

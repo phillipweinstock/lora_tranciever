@@ -2,52 +2,55 @@
 # From Erlang source: c:/Users/pip43/Documents/Projects/lora_tranciever/lib/mqtt.erl
 # At: 2023-07-16 16:05:31
 
-
 defmodule Mqtt do
-
   @name :mqtt_client
   def start_mqtt() do
-    config = %{url: AppConfig.mqtt_endpoint, connected_handler: &handle_connected/1}
+    config = %{url: AppConfig.mqtt_endpoint(), connected_handler: &handle_connected/1}
     {:ok, mQTT} = :mqtt_client.start(config)
     :io.format(~c"MQTT started.~n")
-    :erlang.register(:mqtt_instance,mQTT)
+    :erlang.register(:mqtt_instance, mQTT)
     :timer.sleep(:infinity)
   end
-
 
   defp handle_connected(mQTT) do
     config = :mqtt_client.get_config(mQTT)
     topic = "atomvm/qos0"
     :io.format(~c"Connected to ~p~n", [:maps.get(:url, config)])
     :io.format(~c"Subscribing to ~p...~n", [topic])
-    :ok = :mqtt_client.subscribe(mQTT, topic, %{subscribed_handler: &handle_subscribed/2, data_handler: &handle_data/3})
-  end
 
+    :ok =
+      :mqtt_client.subscribe(mQTT, topic, %{
+        subscribed_handler: &handle_subscribed/2,
+        data_handler: &handle_data/3
+      })
+  end
 
   defp handle_subscribed(mQTT, topic) do
     :io.format(~c"Subscribed to ~p.~n", [topic])
-    #:io.format(~c"Spawning publish loop on topic ~p~n", [topic])
-    :erlang.spawn(fn -> Lora.start_reciever() end) #this will start a publishing loop, we do
+    # :io.format(~c"Spawning publish loop on topic ~p~n", [topic])
+    # this will start a publishing loop, we do
+    :erlang.spawn(fn -> Lora.start_reciever() end)
   end
-
 
   defp handle_data(_mQTT, topic, data) do
     :io.format(~c"Received data on topic ~p: ~p ~n", [topic, data])
     :ok
   end
 
-
-  def publish(mQTT, topic,msg) do
+  def publish(mQTT, topic, msg) do
     :io.format(~c"Publishing data on topic ~p~n", [topic])
+
     try do
       var_self = self()
+
       handlePublished = fn mQTT2, topic2, msgId ->
         send(var_self, :published)
         handle_published(mQTT2, topic2, msgId)
       end
+
       publishOptions = %{qos: :exactly_once, published_handler: handlePublished}
-      #msg = :erlang.list_to_binary(~c"echo" )
       _ = :mqtt_client.publish(mQTT, topic, msg, publishOptions)
+
       receive do
         :published ->
           :ok
@@ -59,13 +62,9 @@ defmodule Mqtt do
       :c, :e ->
         :io.format(~c"Error in publish: ~p:~p~n", [:c, :e])
     end
-    #:timer.sleep(5000)
-    #publish(mQTT, topic)
   end
-
 
   defp handle_published(mQTT, topic, msgId) do
     :io.format(~c"MQTT ~p published to topic ~p msg_id=~p~n", [mQTT, topic, msgId])
   end
-
 end

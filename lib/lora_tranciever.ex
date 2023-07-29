@@ -5,7 +5,6 @@ defmodule LoraTranciever do
 
   def start() do
     Wifi.start_network()
-    #:io.format("Starting application")
     #lora_start()
     :timer.sleep(2000)
     Mqtt.start_mqtt()
@@ -15,10 +14,5 @@ defmodule LoraTranciever do
 
   defp lora_start() do
     Lora.start_transmitter()
-     #Lora.start_gateway()
-     #lora_Device = Lora.start_client()
-    # Lora.start_reciever()
-     #payload = "123"
-    # Lora.send_lora(lora_Device, payload)
   end
 end
