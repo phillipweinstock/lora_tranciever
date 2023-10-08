@@ -41,7 +41,7 @@ defmodule Lora do
 
   defp loop(lora, i) do
     #payload = ["AtomVM ", :erlang.integer_to_list(i)]
-    payload = [:atomvm.random()]
+    payload = [:erlang.integer_to_list(:atomvm.random())]
 
     try do
       case(:lora.broadcast(lora, payload)) do
