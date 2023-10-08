@@ -5,7 +5,7 @@
 defmodule Mqtt do
   @name :mqtt_client
   def start_mqtt() do
-    config = %{url: AppConfig.mqtt_endpoint(), connected_handler: &handle_connected/1}
+    config = %{url: AppConfig.mqtt_endpoint(),username: ~c"102101219",password: ~c"102101219", connected_handler: &handle_connected/1}
     {:ok, mQTT} = :mqtt_client.start(config)
     :io.format(~c"MQTT started.~n")
     :erlang.register(:mqtt_instance, mQTT)
