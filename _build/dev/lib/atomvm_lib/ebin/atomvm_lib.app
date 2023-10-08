@@ -1,0 +1,13 @@
+{application,atomvm_lib,
+             [{description,"An OTP library for developing programs for the AtomVM platform"},
+              {vsn,"0.1.0"},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {env,[]},
+              {modules,[api_handler,atomvm_lib,avm_application,
+                        avm_application_controller,avm_env,bh1750,bme280,
+                        codec,diag,httpd,i2c_bus,init,ledc_pwm,lora,lora_node,
+                        lora_sx126x,lora_sx127x,map_utils,rational,sht3x,
+                        sx126x_cmd]},
+              {licenses,["Apache 2.0"]},
+              {links,[]}]}.

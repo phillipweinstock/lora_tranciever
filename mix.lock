@@ -1,6 +1,6 @@
 %{
-  "atomvm_lib": {:git, "https://github.com/atomvm/atomvm_lib.git", "66628a2f4cd83e0b874d0fc88640a998d2790751", []},
+  "atomvm_lib": {:git, "https://github.com/atomvm/atomvm_lib.git", "6e81f31f679bb3ce9b8fab7bc34ec06e1250a150", []},
   "erl2ex": {:git, "https://github.com/dazuma/erl2ex.git", "244c2d9ed5805ef4855a491d8616b8842fef7ca4", []},
-  "exatomvm": {:git, "https://github.com/atomvm/ExAtomVM/", "e1ded3338acf7590e7829399ae3bdffda12ed7c9", []},
+  "exatomvm": {:git, "https://github.com/atomvm/ExAtomVM/", "3c4df4c92672c62ab2503aaaadd2b99f804bc6e5", []},
   "mqtt_client": {:git, "https://github.com/atomvm/atomvm_mqtt_client.git", "d407fe1690a0797a7a8ad41f9405438ca64e5496", []},
 }

@@ -1,0 +1,10 @@
+{application,lora_tranciever,
+             [{optional_applications,[]},
+              {applications,[kernel,stdlib,elixir,logger,exatomvm,atomvm_lib,
+                             mqtt_client]},
+              {description,"lora_tranciever"},
+              {modules,['Elixir.AppConfig','Elixir.Lora',
+                        'Elixir.LoraTranciever','Elixir.Mqtt','Elixir.Wifi',
+                        config]},
+              {registered,[]},
+              {vsn,"0.1.0"}]}.

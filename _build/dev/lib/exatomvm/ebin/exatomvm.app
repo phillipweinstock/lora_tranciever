@@ -1,0 +1,10 @@
+{application,exatomvm,
+             [{optional_applications,[]},
+              {applications,[kernel,stdlib,elixir,logger]},
+              {description,"exatomvm"},
+              {modules,['Elixir.ExAtomVM','Elixir.ExAtomVM.PackBEAM',
+                        'Elixir.Mix.Tasks.Atomvm.Check',
+                        'Elixir.Mix.Tasks.Atomvm.Esp32.Flash',
+                        'Elixir.Mix.Tasks.Atomvm.Packbeam']},
+              {registered,[]},
+              {vsn,"0.1.0"}]}.

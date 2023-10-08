@@ -1,5 +1,5 @@
 defmodule Lora do
-  @pin 27
+
   def start_transmitter() do
     # :io.format("Attempting to start client/sender")
     loraConfig = :config.lora_config(:sx127x)
@@ -16,20 +16,12 @@ defmodule Lora do
     #:io.format("Configuration successfully retrived")
     {:ok, lora} = :lora.start(Map.merge(loraConfig, %{receive_handler: &handle_receive/3}))
     #:io.format(~c"Lora reciever started.  Waiting to receive messages...~n")
-    GPIO.set_pin_mode(@pin,:output)
     :timer.sleep(:infinity)
   end
 
   defp handle_receive(lora, packet, qoS) do
     :io.format(~c"Received Packet: ~p; QoS: ~p~n", [packet, qoS])
-    #GPIO.digital_write(@pin,:high)
-    #:gpio.digital_write(@pin,:high)
-    #:gpio.set_direction(Process.whereis(:gpio),@pin,:high)
-    Mqtt.publish(Process.whereis(:mqtt_instance), "lora_transciever/status", packet)
-    #:timer.sleep(1000)
-    #:gpio.set_direction(Process.whereis(:gpio),@pin,:low)
-
-    #GPIO.digital_write(@pin,:low)
+    Mqtt.publish(Process.whereis(:mqtt_instance), "102101219/TNE20003/status", packet)
   end
 
   def send_lora(Device, Payload) do
@@ -48,7 +40,8 @@ defmodule Lora do
   end
 
   defp loop(lora, i) do
-    payload = ["AtomVM ", :erlang.integer_to_list(i)]
+    #payload = ["AtomVM ", :erlang.integer_to_list(i)]
+    payload = [:atomvm.random()]
 
     try do
       case(:lora.broadcast(lora, payload)) do
